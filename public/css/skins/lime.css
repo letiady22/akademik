@@ -1,0 +1,45 @@
+.header {
+    position: relative;
+    min-height: 160px;
+}
+.header .navigation {
+    background-color: #cddc39;
+    /*border-bottom: solid 1px #ffffff;*/
+}
+header ul.primary-nav li a:hover {
+    color: #cddc39;
+}
+.header header ul.primary-nav li a {
+    color: #ffffff;
+}
+
+.header header ul.primary-nav li a:hover {
+    color: #666666;
+}
+.fixed header ul.primary-nav li a:hover {
+    color: #666666;
+}
+.fixed header .open ul.primary-nav li a:hover {
+    color: #666666;
+}
+
+.fixed {
+  position: fixed;
+  background-color: #cddc39;
+  z-index: 999;
+  width: 100%;
+  /*border-bottom: solid 1px #ffffff;*/
+}
+.fixed header a {
+    color: #ffffff;
+}
+.fixed header ul.primary-nav li  {
+    color: #ffffff;
+}
+.fixed header ul.primary-nav li a {
+    color: #ffffff;
+}
+
+.fixed header .open ul.primary-nav li a {
+    color: #ffffff;
+}
