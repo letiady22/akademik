@@ -1,50 +1,12 @@
 <?php
 
-Route::get('/', function () {
-    $jadwal = collect([
-        [
-            'hari' => 'Senin',
-            'nama' => 'PHP',
-            'jam' => '08:30-10:00'
-        ],
-        [
-            'hari' => 'Senin',
-            'nama' => 'Java',
-            'jam' => '10:00-12:00'
-        ],
-        [
-            'hari' => 'Selasa',
-            'nama' => 'Istirahat',
-            'jam' => '12:00-13:00'
-        ],
-        [
-            'hari' => 'Selasa',
-            'nama' => 'Python',
-            'jam' => '08:30-10:00'
-        ],
-        [
-            'hari' => 'Rabu',
-            'nama' => 'Javascript',
-            'jam' => '10:00-12:00'
-        ],
-        [
-            'hari' => 'Kamis',
-            'nama' => 'PHP',
-            'jam' => '12:00-13:00'
-        ],
-    ]);
-    $collapsed = $jadwal->collapse();
-    $group = $jadwal->groupBy('hari');
-    $filtered = $jadwal->filter(function ($v, $k) {
-        return $k['hari'] == 'Selasa';
-    });
-    dd($filtered->all());
-});
+Route::get('/', 'Auth\AuthController@getLogin');
+Route::post('/', 'Auth\AuthController@postLogin');
 
 Route::group(['middleware' => ['web']], function () {
     
     Route::group([
-        // 'middleware' => 'auth',
+        'middleware' => 'auth',
         'namespace' => 'Backend',
         'prefix' => 'backend'
     ], function () {
