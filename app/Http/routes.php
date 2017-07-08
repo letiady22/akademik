@@ -71,8 +71,14 @@ Route::group(['middleware' => ['web']], function () {
         Route::group(['prefix' => 'laporan'], function() {
             
             
-            Route::get('siswa/{id}', 'SiswaController@report');
-            Route::get('penerimaan/{id}', 'PendaftaranController@report');
+            Route::get('siswa/{id}', [
+                'uses' => 'SiswaController@report',
+                'as' => 'backend.laporan.siswa'
+            ]);
+            Route::get('penerimaan/{id}', [
+                'uses' => 'PendaftaranController@report',
+                'as' => 'backend.laporan.pendaftaran'
+            ]);
             
         });
         
